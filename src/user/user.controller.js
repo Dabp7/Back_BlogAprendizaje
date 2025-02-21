@@ -2,8 +2,36 @@ import { hash, verify } from "argon2";
 import User from "./user.model.js";
 
 
+
+export const adminDefaultCreated = async (req, res) => {
+    try{
+
+        const defaultAdmin = await User.findOne({ email: "Dabp@gmail.com" });
+
+        if(!defaultAdmin){
+            const newAdmin = new User({
+                fullName: "Diego Berciannn",
+                username: "Dabpp",
+                email: "Dabp@gmail.com",
+                password: "dBerc1an!",
+                phone: "49056584",
+                role: "ADMIN_ROLE"
+            })
+    
+            await newAdmin.save();
+        }
+
+    }catch(err){
+        return res.status(500).json({
+            message: "Error al crear el administrador general",
+            error: err.message
+        });
+    }
+};
+
+
 export const updateUser = async (req, res) => {
-    try {
+    try{
         const { uid } = req.params;
         const data = req.body;
         const userToken = req.usuario.id;
