@@ -7,14 +7,15 @@ export const adminDefaultCreated = async (req, res) => {
     try{
 
         const defaultAdmin = await User.findOne({ email: "Dabp@gmail.com" });
+        const encryptedPassword = await hash("dBerc1an!")
 
         if(!defaultAdmin){
             const newAdmin = new User({
-                fullName: "Diego Berciannn",
+                fullName: "Diego Bercian",
                 username: "Dabpp",
                 email: "Dabp@gmail.com",
-                password: "dBerc1an!",
-                phone: "49056584",
+                password: encryptedPassword,
+                phone: "49099817",
                 role: "ADMIN_ROLE"
             })
     

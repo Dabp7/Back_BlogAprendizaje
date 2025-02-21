@@ -12,6 +12,7 @@ export const defaulCategoryCreated = async () =>{
             })
     
             await newCategory.save();
+
         }
 
         
