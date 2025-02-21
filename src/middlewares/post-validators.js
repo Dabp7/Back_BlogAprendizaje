@@ -12,7 +12,6 @@ export const createPostValidator = [
     body("text").notEmpty().withMessage("El texto es requerido"),
     body("text").isLength({min: 1}).withMessage("El texto debe contener al menos 1 caracter"),
     body("category").notEmpty().withMessage("La categoria es requerida"),
-    body("author").notEmpty().withMessage("El autor es requerido"),
     validarCampos,
     handleErrors
 ];

@@ -58,7 +58,7 @@ export const updatePost = async (req, res) => {
         if(!post){
             return res.status(404).json({
                 success: false,
-                msg: 'Pulbicación no encontrada'
+                msg: 'Publicación no encontrada'
             });
         }
 
@@ -72,7 +72,7 @@ export const updatePost = async (req, res) => {
     } catch(err){
         res.status(500).json({
             success: false,
-            msg: 'Error al actualizar usuario',
+            msg: 'Error al actualizar la publicación',
             error: err.message
         });
     }

@@ -1,7 +1,7 @@
 import User from "../user/user.model.js"
 import Category from "../category/category.model.js"
 import Post from "../post/post.model.js"
-
+import Comments from "../comments/comments.model.js"
 
 export const emailExists = async (email = "") => {
     const existe = await User.findOne({email})
@@ -37,6 +37,14 @@ export const postExists = async (idPost = " ") => {
         throw new Error("No existe la publicación con el ID proporcionado")
     }
 }
+
+export const commentExists = async (idComment = " ") => {
+    const existe = await Comments.findById(idComment)
+    if(!existe){
+        throw new Error("No existe el comentario con el ID proporcionado")
+    }
+}
+
 
 
 

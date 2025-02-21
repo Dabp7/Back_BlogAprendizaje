@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { addComment } from "./comments.controller.js";
-import { createPostValidator, updatePostValidator, deletePostValidator } from "../middlewares/post-validators.js";
+import { addComment , updateComment, deleteComment} from "./comments.controller.js";
+import { createCommentValidator, updateCommentValidator, deleteCommentValidator } from "../middlewares/comments-validators.js";
 
 const router = Router();
 
-router.post("/addComment", createPostValidator, addComment);
+router.post("/addComment", createCommentValidator, addComment);
 
+router.patch("/editComment/:idComment", updateCommentValidator, updateComment)
 
+router.delete("/deleteComment/:idComment", deleteCommentValidator, deleteComment)
 
 export default router;
