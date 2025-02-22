@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "b049606d-2bd4-46c4-9d91-515cfb3a56a6",
+		"name": "Kinaloop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38160952"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"AdolfoPerez@gmail.com\",\r\n    \"password\": \"dBerc1an!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Devyn Tubac\",\r\n    \"username\": \"de_vyn\",\r\n    \"email\": \"devyn@gmail.com\",\r\n    \"password\": \"dBerc1an!\",\r\n    \"phone\": \"49056584\",\r\n    \"role\": \"USER_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Editar Usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3ZDk0N2E2MDAzYjJmNWM4ZmE4ZGUiLCJpYXQiOjE3NDAxMDI2MDEsImV4cCI6MTc0MDEwNjIwMX0.vhBz_l-_JJGaKDDpenmp0CQMnuzKlzs2H8ae-B84wW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Adolfo Bercian Perez 2\",\r\n    \"phone\": \"88884444\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/user/updateUser/67b7cfbeb92b0cd0b079faca",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"user",
+								"updateUser",
+								"67b7cfbeb92b0cd0b079faca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Contraseña",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3ZDk0N2E2MDAzYjJmNWM4ZmE4ZGUiLCJpYXQiOjE3NDAxMDk1OTEsImV4cCI6MTc0MDExMzE5MX0.KSuKx1ll7BlO7F6yUTeiw5X-g-DBzhTZFSZ9AJgzPZo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"aBerci4n$\",\r\n    \"newPassword\": \"dBerc1an!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/user/updatePassword/67b7d947a6003b2f5c8fa8de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"user",
+								"updatePassword",
+								"67b7d947a6003b2f5c8fa8de"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categoria",
+			"item": [
+				{
+					"name": "Crear Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4OGM4OWY0OTIxNTNmMTFkYzliNTYiLCJpYXQiOjE3NDAxNDc4NTUsImV4cCI6MTc0MDE1MTQ1NX0.RTepyD5raRUk-eD826Q55LuAmG8xeZtWLjWgbh-n_FE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Deportes\", \r\n    \"description\": \"Categoria de deportes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/category/addCategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"category",
+								"addCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Categoria",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I3Y2ZiZWI5MmIwY2QwYjA3OWZhY2EiLCJpYXQiOjE3NDAxMTgxNTQsImV4cCI6MTc0MDEyMTc1NH0.3O-x5pJJ6mHEXinlLgVnL9dx8eh7mo4lokCs_YKH1Lc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Deportes 2\",\r\n    \"description\": \"Deportes segunda parte\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/category/editCategory/67b818f871eb2bb05b54ffa0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"category",
+								"editCategory",
+								"67b818f871eb2bb05b54ffa0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Agregar Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4OGQ3ZWY0OTIxNTNmMTFkYzliNWUiLCJpYXQiOjE3NDAxNTIyMzksImV4cCI6MTc0MDE1NTgzOX0.X-eFXd1yHOO1ZX2tYnzlqLsGnUA1hTYRXeQo3N_4Iuc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Real Madrid vs Manchester City 2\",\r\n    \"text\": \"Mbappe es el mejor jugador del mundo\",\r\n    \"category\": \"67b88d4ff492153f11dc9b5a\",\r\n    \"author\": \"67b88d7ef492153f11dc9b5e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/post/addPost/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"post",
+								"addPost",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Publicacion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4OGM4OWY0OTIxNTNmMTFkYzliNTYiLCJpYXQiOjE3NDAxNTA2NTAsImV4cCI6MTc0MDE1NDI1MH0.cE26BxiE4vsrw881LYRgdJTT0-OPPvn-ubFmtuDyo-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Real Madrid\",\r\n    \"text\": \"Vini el mejor jugador del mundo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/post/editPost/67b88defdc3acc7e163a0710",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"post",
+								"editPost",
+								"67b88defdc3acc7e163a0710"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Publicación",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4OGQ3ZWY0OTIxNTNmMTFkYzliNWUiLCJpYXQiOjE3NDAxNTI0NDcsImV4cCI6MTc0MDE1NjA0N30.J8nTXTiXSULKrn3T3kugSX65Lh_8TB6Ucgmwq_sN9ks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/post/deletePost/67b89dea574d60ce97edab27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"post",
+								"deletePost",
+								"67b89dea574d60ce97edab27"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentarios",
+			"item": [
+				{
+					"name": "Agregar Comentario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4YTc4Mjc4OTgyNzhjYTJmOTI1YTgiLCJpYXQiOjE3NDAxNTQ3NjQsImV4cCI6MTc0MDE1ODM2NH0.xo_mpixL8FTAYAqTql5RQsOjuo7HO__aTtpsm0_RWr0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Devyn>>>>\",\r\n    \"post\": \"67b88defdc3acc7e163a0710\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/comment/addComment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"comment",
+								"addComment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Comentario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4YTc4Mjc4OTgyNzhjYTJmOTI1YTgiLCJpYXQiOjE3NDAxNTQ3NjQsImV4cCI6MTc0MDE1ODM2NH0.xo_mpixL8FTAYAqTql5RQsOjuo7HO__aTtpsm0_RWr0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Devyn si funciona)?\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/comment/editComment/67b8a836da302b66e8f05ff4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"comment",
+								"editComment",
+								"67b8a836da302b66e8f05ff4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Comentario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2I4YTc4Mjc4OTgyNzhjYTJmOTI1YTgiLCJpYXQiOjE3NDAxNTQ3NjQsImV4cCI6MTc0MDE1ODM2NH0.xo_mpixL8FTAYAqTql5RQsOjuo7HO__aTtpsm0_RWr0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/comment/deleteComment/67b8b1613866d2751c01b5a9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"comment",
+								"deleteComment",
+								"67b8b1613866d2751c01b5a9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
