@@ -7,7 +7,6 @@ import morgan from "morgan"
 import { dbConnection } from "./mongo.js"
 import postRoutes from "../src/post/post.routes.js"
 import commentRoutes from "../src/comments/comments.routes.js"
-import { defaultCategorysCreated } from "../src/category/category.controller.js"
 import { swaggerDocs, swaggerUi } from "./swagger.js";
 
 
@@ -42,7 +41,6 @@ export const initServer = () => {
         middlewares(app)
         conectarDB()
         routes(app)
-        defaultCategorysCreated()
         app.listen(process.env.PORT)
         console.log(`Server running on port ${process.env.PORT}`)
     }catch(err){
