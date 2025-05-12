@@ -11,20 +11,26 @@ const postSchema = Schema({
         required: [true, "text is required"],
         maxLength: [255, "Máximo de caracteres permitidos 255"]
     },
+    date: {
+        type: String,
+        required: [true, "date is required"],
+    },
     category: {
         type: Schema.Types.ObjectId,
-        ref: 'category',
+        ref: 'Category',
         required: true
     },
     author: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-        required: true
+        type: String,
+        required: [true, "author is required"]
     },
     comments: [{
         type: Schema.Types.ObjectId,
         ref: 'comments'
     }],
+    urlImage: {
+        type: String
+    },
     status:{
         type: Boolean,
         default: true
@@ -32,7 +38,7 @@ const postSchema = Schema({
 },
 {
     versionKey: false,
-    timeStamps: true
+    timestamps: true
 })
 
 

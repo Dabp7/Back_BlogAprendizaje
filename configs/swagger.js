@@ -21,8 +21,6 @@ const options ={
         ]
     },
     apis:[
-        "./src/user/*",
-        "./src/auth/*",
         "./src/category/*",
         "./src/post/*",
         "./src/comments/*"

@@ -7,9 +7,8 @@ const commentsSchema = Schema({
         maxLength: [255, "Máximo de caracteres permitidos 255"]
     },
     author: {
-        type: Schema.Types.ObjectId,
-        ref: 'user',
-        required: true
+        type: String,
+        required: [true, "author is required"]
     },
     post: {
         type: Schema.Types.ObjectId,
@@ -19,7 +18,7 @@ const commentsSchema = Schema({
 },
 {
     versionKey: false,
-    timeStamps: true
+    timestamps: true
 })
 
 

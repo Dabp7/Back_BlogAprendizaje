@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "43d2feaa-c586-4052-aa55-3a7be0d28d08",
+		"name": "Kinaloopv2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38160952"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "Agregar Post",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Actividad # 3 - Mapa mental\",\r\n    \"text\": \"Diseña un mapa mental sobre Hosting, Dominio, Cliente-Servidor, Web semántica. Usa colores, flechas y jerarquías para mostrar relaciones claras y ofrecer una visión general, comprensible y visualmente atractiva del desarrollo web.\",\r\n    \"date\": \"10/02/2025\",\r\n    \"category\": \"681d589af12a4c14a1f70b9d\",\r\n    \"author\": \"Diego Bercian\",\r\n    \"urlImage\": \"https://formacioncip.com/wp-content/uploads/2023/03/DESARROLLO-APLICACIONES-TECNOLOGIAS-WEB-1280x720.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/post/addPost/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"post",
+								"addPost",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/post/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"post",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Publicacion",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Real Madrid\",\r\n    \"text\": \"Vini el mejor jugador del mundo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/post/editPost/681d5ac7b9b5641a9c84aca8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"post",
+								"editPost",
+								"681d5ac7b9b5641a9c84aca8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Publicación",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/post/deletePost/681d5ac7b9b5641a9c84aca8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"post",
+								"deletePost",
+								"681d5ac7b9b5641a9c84aca8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentarios",
+			"item": [
+				{
+					"name": "Agregar Comentario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Devyn>>>>\",\r\n    \"author\": \"Dabp2\",\r\n    \"post\": \"681d5ac7b9b5641a9c84aca8\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/comment/addComment/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"comment",
+								"addComment",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Comentarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/kinaloop/v1/comment/getCommentsByPost/681fc9102c8b3ba39360b6e9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"kinaloop",
+								"v1",
+								"comment",
+								"getCommentsByPost",
+								"681fc9102c8b3ba39360b6e9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

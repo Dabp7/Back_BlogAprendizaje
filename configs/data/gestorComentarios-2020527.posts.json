@@ -1,0 +1,242 @@
+[{
+  "_id": {
+    "$oid": "68214e9ea3a9fd2e922c953a"
+  },
+  "title": "Laboratorio # 1 - página web",
+  "text": "Crea tres páginas HTML con CSS: una sobre algo que te guste, otra con tu biografía y metas académicas, y una con el rediseño del sitio de Kinal (sin copiar su código). Usa sus colores/textos y justifica por qué tu diseño es mejor.",
+  "date": "20/01/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b99"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [
+    {
+      "$oid": "68216013beebd08d006108cf"
+    }
+  ],
+  "urlImage": "https://www.godaddy.com/resources/latam/wp-content/uploads/sites/4/pagina-web.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T01:27:58.821Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:42:27.445Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682152f7a3a9fd2e922c9544"
+  },
+  "title": "Laboratorio # 2 - Adición de funcionalidades",
+  "text": "Crea tres páginas HTML con CSS según instrucciones. Implementa funciones mínimas: UPDATE (actualizar datos), UPDATE_PASSWORD (cambiar contraseña), DELETE (eliminar registros) y ADD_APPOINTMENT (agregar citas). Estas pueden cambiar o ampliarse.",
+  "date": "03/02/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b99"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [],
+  "urlImage": "https://www.ingeniovirtual.com/wp-content/uploads/que-es-una-aplicacion-web.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T01:46:31.683Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T01:46:31.683Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68215571beebd08d0061088f"
+  },
+  "title": "Laboratorio # 3 - análisis de caso COPEREX",
+  "text": "Desarrolla una API con Node.js, Express y MongoDB para la feria “Interfer” de COPEREX. Solo administradores pueden iniciar sesión, registrar empresas, ver y editar su información (nivel de impacto, trayectoria, categoría) filtrar datos y generar reportes.",
+  "date": "24/02/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b99"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [],
+  "urlImage": "https://www.godaddy.com/resources/latam/wp-content/uploads/hosting-1.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T01:57:05.727Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T01:57:05.727Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68215654beebd08d00610895"
+  },
+  "title": "Laboratorio # 4 - Ejercicios de JavaScript",
+  "text": "Resuelve 8 ejercicios de lógica en HackerRank usando solo JavaScript: 4 fáciles, 2 medios y 2 difíciles. Trabajo individual, con código limpio, descriptivo y comentado. Haz pruebas en la plataforma y optimiza tus soluciones antes de la fecha límite.",
+  "date": "31/03/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b99"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [],
+  "urlImage": "https://lform.com/cms/resources/media/2021/01/lform_javascript_blog_header_image-1184x694.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:00:52.548Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:00:52.548Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6821574bbeebd08d006108a3"
+  },
+  "title": "Laboratorio # 5 - Blog de aprendizaje",
+  "text": "Crea un blog con el stack MERN para publicar actividades de tres cursos técnicos. Solo el backend gestiona publicaciones; los visitantes comentan sin cuenta desde el frontend. Entrega antes de la fecha límite.",
+  "date": "05/05/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b99"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [],
+  "urlImage": "https://mailrelay.com/wp-content/uploads/2018/03/que-es-un-blog-1.png",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:04:59.366Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:04:59.366Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68215816beebd08d006108a9"
+  },
+  "title": "Laboratorio # 1 - Agenda Web",
+  "text": "Desarrolla una agenda web visual con login, lista de 5 contactos, botón para agregar contacto, vista de detalles, favoritos con al menos 2 contactos, perfil del usuario, y una ToDo list para agregar, editar y borrar.",
+  "date": "20/01/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70ba0"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [],
+  "urlImage": "https://img.freepik.com/vector-premium/banner-plantilla-concepto-agenda-web-e-impresion_153097-163.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:08:22.522Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:08:22.522Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68215893beebd08d006108b1"
+  },
+  "title": "Laboratorio # 2 - Administración de alumnos",
+  "text": "Crea un backend con NodeJS, Express y MongoDB para administrar alumnos y maestros. Usa Bcrypt, Mongoose y JWT. Alumnos se registran, gestionan perfil y cursos (máx. 3). Maestros manejan cursos. Todo debe ser funcional y seguro.",
+  "date": "03/02/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70ba0"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [],
+  "urlImage": "https://images.ctfassets.net/63bmaubptoky/68blYRJBDcePUKrsQFD5tX/87600831c8593f6abe5d130878390a50/sistemas-de-administracion-escolar-MX-Capterra-header.png",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:10:27.465Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:10:27.465Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "682158fcbeebd08d006108b4"
+  },
+  "title": "Laboratorio # 3 - Gestor de opiniones",
+  "text": "Crea un sistema red social con login por correo o usuario. Los usuarios podrán publicar opiniones con título, categoría y texto, editar o borrar sus publicaciones y comentar en otras. Solo podrán editar o borrar sus comentarios.",
+  "date": "17/02/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70ba0"
+  },
+  "author": "Braulio Echeverria",
+  "comments": [],
+  "urlImage": "https://cronuts.digital/wp-content/uploads/2018/12/glosario-terminos-digitales.png",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:12:12.460Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:12:12.460Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68215c4fbeebd08d006108bc"
+  },
+  "title": "Actividad # 1 - Infografía HTML, CSS, PreProcesadores",
+  "text": "Crea una infografía organizada sobre HTML5, CSS3, Flexbox, Bootstrap, Preprocesadores. Usa colores, íconos y gráficos para hacerla visualmente atractiva. Resalta características clave y su utilidad en desarrollo web con fuentes confiables.",
+  "date": "20/01/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b9d"
+  },
+  "author": "Diego Bercian",
+  "comments": [],
+  "urlImage": "https://www.acens.com/comunicacion/wp-content/images/2016/07/wp-presprocesadores-css-acens-1.png",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:26:23.543Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:26:23.543Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68215ce0beebd08d006108c2"
+  },
+  "title": "Actividad # 2 - Mapa conceptual",
+  "text": "Crea un mapa conceptual sobre JavaScript, AJAX, NextJS, GraphQL y BackboneJS. Usa íconos, colores y jerarquías para mostrar sus relaciones, funciones y categorías, facilitando una visión clara del ecosistema web moderno.",
+  "date": "27/01/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b9d"
+  },
+  "author": "Diego Bercian",
+  "comments": [],
+  "urlImage": "https://propulsatuweb.com/wp-content/uploads/2021/12/shutterstock_1078387013-scaled-1-1024x512.jpg",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:28:49.000Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:28:49.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68215d38beebd08d006108c4"
+  },
+  "title": "Actividad # 3 - Mapa mental",
+  "text": "Diseña un mapa mental sobre Hosting, Dominio, Cliente-Servidor, Web semántica. Usa colores, flechas y jerarquías para mostrar relaciones claras y ofrecer una visión general, comprensible y visualmente atractiva del desarrollo web.",
+  "date": "10/02/2025",
+  "category": {
+    "$oid": "681d589af12a4c14a1f70b9d"
+  },
+  "author": "Diego Bercian",
+  "comments": [
+    {
+      "$oid": "68216024beebd08d006108d6"
+    },
+    {
+      "$oid": "68216043beebd08d006108dd"
+    }
+  ],
+  "urlImage": "https://formacioncip.com/wp-content/uploads/2023/03/DESARROLLO-APLICACIONES-TECNOLOGIAS-WEB-1280x720.png",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-05-12T02:30:16.800Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:43:15.784Z"
+  }
+}]

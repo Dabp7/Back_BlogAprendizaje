@@ -1,0 +1,48 @@
+[{
+  "_id": {
+    "$oid": "68216013beebd08d006108cf"
+  },
+  "text": "¡Increible!",
+  "author": "Diego Bercian",
+  "post": {
+    "$oid": "68214e9ea3a9fd2e922c953a"
+  },
+  "createdAt": {
+    "$date": "2025-05-12T02:42:27.440Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:42:27.440Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68216024beebd08d006108d6"
+  },
+  "text": "¿Mapa mental? qué interesante...",
+  "author": "Dabp",
+  "post": {
+    "$oid": "68215d38beebd08d006108c4"
+  },
+  "createdAt": {
+    "$date": "2025-05-12T02:42:44.972Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:42:44.972Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68216043beebd08d006108dd"
+  },
+  "text": "Los servicios de Hosting son interesantes",
+  "author": "Devyn Tubac",
+  "post": {
+    "$oid": "68215d38beebd08d006108c4"
+  },
+  "createdAt": {
+    "$date": "2025-05-12T02:43:15.781Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-12T02:43:15.781Z"
+  }
+}]

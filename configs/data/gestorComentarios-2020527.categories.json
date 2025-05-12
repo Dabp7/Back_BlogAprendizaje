@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "681d589af12a4c14a1f70b99"
+  },
+  "name": "Taller III",
+  "description": "Pretende implementar proyectos y actividades que enfoquen al alumno a un ambito práctico y profesional.",
+  "createdAt": {
+    "$date": "2025-05-09T01:21:30.180Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-09T01:21:30.180Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681d589af12a4c14a1f70b9d"
+  },
+  "name": "Tecnología III",
+  "description": "Pretende llevarlo por la teoría de cada tema a aplicar durante la clase de taller, siendo la teoría lo primero a entender.",
+  "createdAt": {
+    "$date": "2025-05-09T01:21:30.197Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-09T01:21:30.197Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681d589af12a4c14a1f70ba0"
+  },
+  "name": "Práctica Supervisada",
+  "description": "Pretende conjuntar las areas de Taller III y Tecnología III, dandole un enfoque más externo y cercano a la realidad.",
+  "createdAt": {
+    "$date": "2025-05-09T01:21:30.205Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-09T01:21:30.205Z"
+  }
+}]
