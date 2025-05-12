@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistema de Gestión de Opiniones
 
 ## Descripción
@@ -35,3 +36,6 @@ Este sistema tiene como objetivo crear una plataforma de gestión de opiniones s
 - **Contraseña:** dBerc1an!  
 
 
+=======
+# Back_BlogAprendizaje
+>>>>>>> c25c9fb83cd82df313a38dabbcf0e5ede592fb2b
