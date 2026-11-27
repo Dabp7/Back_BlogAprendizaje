@@ -1,10 +1,9 @@
-import { body } from "express-validator";
-import { validarCampos } from "./validate-fields.js";
-import { handleErrors } from "./handle-errors.js";
-
+import {body, param} from 'express-validator';
+import {validarCampos} from './validate-fields.js';
 export const createCommentValidator = [
-    body("text").notEmpty().withMessage("El texto es requerido"),
-    body("post").notEmpty().withMessage("La publicación es requerida"),
+    body('author').isString().bail().trim().isLength({min:2,max:80}).withMessage('El autor debe tener entre 2 y 80 caracteres'),
+    body('text').isString().bail().trim().isLength({min:3,max:1000}).withMessage('El comentario debe tener entre 3 y 1000 caracteres'),
+    body('post').isString().bail().isMongoId().withMessage('La publicación debe ser un ID válido'),
     validarCampos,
-    handleErrors
 ];
+export const commentPostValidator = [param('idPost').isMongoId().withMessage('La publicación debe ser un ID válido'), validarCampos];

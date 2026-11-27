@@ -1,28 +1,13 @@
-import { body, param } from "express-validator";
-import { validarCampos } from "./validate-fields.js";
-import { handleErrors } from "./handle-errors.js";
-import { postExists } from "../helpers/db-validators.js";
-
-
-export const createPostValidator = [
-    body("title").notEmpty().withMessage("El titulo es requerido"),
-    body("text").notEmpty().withMessage("El texto es requerido"),
-    body("text").isLength({min: 1}).withMessage("El texto debe contener al menos 1 caracter"),
-    body("category").notEmpty().withMessage("La categoria es requerida"),
-    validarCampos,
-    handleErrors
+import {body,param} from 'express-validator';
+import {validarCampos} from './validate-fields.js';
+const fieldRules = (optional=false) => [
+    (optional?body('title').optional():body('title')).isString().bail().trim().isLength({min:3,max:60}),
+    (optional?body('text').optional():body('text')).isString().bail().trim().isLength({min:3,max:255}),
+    (optional?body('author').optional():body('author')).isString().bail().trim().isLength({min:2,max:80}),
+    (optional?body('date').optional():body('date')).isString().bail().isISO8601({strict:true}),
+    (optional?body('category').optional():body('category')).isString().bail().isMongoId(),
+    body('urlImage').optional().isString().bail().custom(value => value === '' || /^https:\/\//.test(value)).withMessage('La imagen debe usar HTTPS'),
 ];
-
-export const updatePostValidator = [
-    param("idPost", "No es un ID válido").isMongoId(),
-    param("idPost").custom(postExists),
-    validarCampos,
-    handleErrors
-];
-
-export const deletePostValidator = [
-    param("idPost", "No es un ID válido").isMongoId(),
-    param("idPost").custom(postExists),
-    validarCampos,
-    handleErrors
-];
+export const createPostValidator=[...fieldRules(),validarCampos];
+export const updatePostValidator=[param('idPost').isMongoId(),...fieldRules(true),validarCampos];
+export const deletePostValidator=[param('idPost').isMongoId(),validarCampos];

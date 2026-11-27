@@ -1,74 +1,26 @@
-'use strict';
-
+import mongoose from 'mongoose';
 import Post from '../post/post.model.js';
-import Comments from "./comments.model.js"
-
-
-export const addComment = async(req, res) =>{
+import Comments from './comments.model.js';
+import {fail,errorResponse,pagination} from '../helpers/http.js';
+export const addComment=async(req,res)=>{
     try {
-        const data = req.body; 
-
-        const { post } = data; 
- 
-        const findPost = await Post.findById(post);
-
-        if(!findPost){
-            return res.status(404).json({
-                success: false,
-                message: 'Post no encontrado'
-            });
-        }
-
-        const comment = new Comments({
-            ...data,
-            post: findPost 
+        const {author,text,post}=req.body;
+        let comment;
+        await mongoose.connection.transaction(async session=>{
+            const existing=await Post.findOneAndUpdate({_id:post,status:true},{$inc:{commentVersion:1}},{new:true,session});
+            if(!existing)fail(404,'Publicación no encontrada');
+            [comment]=await Comments.create([{author,text,post:existing._id}],{session});
+            await Post.updateOne({_id:existing._id},{$push:{comments:comment._id}},{session});
         });
-
-            const savedComment = await comment.save();
-
-            findPost.comments.push(savedComment._id);
-
-            await findPost.save();
-
-        res.status(200).json({
-            success: true,
-            comment: savedComment,
-            message: 'Comentario agregado con éxito'
-        });
-
-    }catch(err){
-        res.status(500).json({
-            success: false,
-            message: 'Error al agregar el comentario',
-            error: err.message
-        });
-    }
+        return res.status(201).json({success:true,comment,message:'Comentario agregado con éxito'});
+    } catch(error) {return errorResponse(res,error);}
 };
-
-export const getCommentsByPost = async (req, res) => {
+export const getCommentsByPost=async(req,res)=>{
     try {
-        const { idPost } = req.params;
-        
-        const comments = await Comments.find({ post: idPost })
-            .sort({ createdAt: -1 });
-
-        res.status(200).json({
-            success: true,
-            comments
-        });
-
-    } catch(err) {
-        res.status(500).json({
-            success: false,
-            message: 'Error al obtener los comentarios',
-            error: err.message
-        });
-    }
-}
-
-
-
-
-
-
-
+        if(!await Post.exists({_id:req.params.idPost,status:true}))fail(404,'Publicación no encontrada');
+        const {limit,offset}=pagination(req.query);
+        const query={post:req.params.idPost};
+        const [total,comments]=await Promise.all([Comments.countDocuments(query),Comments.find(query).sort({createdAt:-1,_id:-1}).skip(offset).limit(limit)]);
+        return res.json({success:true,total,comments,limit,offset});
+    } catch(error) {return errorResponse(res,error);}
+};
