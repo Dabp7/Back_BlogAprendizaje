@@ -1,12 +1,2 @@
-export const handleErrors = (err, req, res, next) => {
-    if (err.status === 400 || err.errors) {
-        return res.status(400).json({
-            success: false,
-            errors: err.errors
-        });
-    }
-    return res.status(500).json({
-        success: false,
-        message: err.message
-    });
-}
+import {errorResponse} from '../helpers/http.js';
+export const handleErrors=(error,_req,res,_next)=>errorResponse(res,error);

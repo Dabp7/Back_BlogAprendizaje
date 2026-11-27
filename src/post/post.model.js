@@ -1,6 +1,7 @@
 import { Schema, model} from "mongoose";
 
 const postSchema = Schema({
+    commentVersion: {type: Number, default: 0},
     title:{
         type: String,
         required: [true, "title is required"],
@@ -26,7 +27,7 @@ const postSchema = Schema({
     },
     comments: [{
         type: Schema.Types.ObjectId,
-        ref: 'comments'
+        ref: 'Comments'
     }],
     urlImage: {
         type: String

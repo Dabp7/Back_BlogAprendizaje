@@ -1,101 +1,46 @@
-
+import mongoose from 'mongoose';
 import Post from './post.model.js';
 import Category from '../category/category.model.js';
-
-
-export const addPost = async (req, res) => {
-    try {
-        const data = req.body;
-
-
-        const post = new Post({
-            ...data,
-            comments: []
-        });
-
-        await post.save();
-
-        res.status(200).json({
-            success: true,
-            post
-        });
-
-    }catch(err){
-        res.status(500).json({
-            success: false,
-            message: 'Error al crear la publicación',
-            error: err.message
-        });
-    }
+import Comments from '../comments/comments.model.js';
+import {fail,errorResponse,pagination} from '../helpers/http.js';
+function postFields(body) {
+    return Object.fromEntries(['title','text','author','date','category','urlImage'].filter(key=>body[key]!==undefined).map(key=>[key,body[key]]));
 }
-export const getPosts = async (req, res) => {
+export const addPost=async(req,res)=>{
     try {
-        const posts = await Post.find({ status: true }).populate('category', 'name description').sort({ createdAt: -1 });;
-
-        res.status(200).json({
-            success: true,
-            posts
-        });
-
-    } catch(err){
-        res.status(500).json({
-            success: false,
-            message: 'Error al obtener las publicaciones',
-            error: err.message
-        });
-    }
-}
-
-
-export const updatePost = async (req, res) => {
-    try{
-        const { idPost } = req.params;
-        const data = req.body;
-        
-        const post = await Post.findByIdAndUpdate(idPost, data, { new: true });
-
-        if(!post){
-            return res.status(404).json({
-                success: false,
-                msg: 'Publicación no encontrada'
-            });
-        }
-
-        res.status(200).json({
-            success: true,
-            msg: 'Publicación actualizada',
-            post
-        });
-
-
-    } catch(err){
-        res.status(500).json({
-            success: false,
-            msg: 'Error al actualizar la publicación',
-            error: err.message
-        });
-    }
+        const data=postFields(req.body);
+        if(!await Category.exists({_id:data.category}))fail(404,'Categoría no encontrada');
+        const post=await Post.create({...data,comments:[],status:true});
+        return res.status(201).json({success:true,post});
+    }catch(error){return errorResponse(res,error);}
 };
-
-export const deletePost = async(req, res) =>{
+export const getPosts=async(req,res)=>{
     try{
-        const { idPost } = req.params;
-
-        const post = await Post.findByIdAndUpdate(idPost, {status: false}, { new: true });
-
-        res.status(200).json({ 
-            success: true,
-            message: 'Publicación eliminada exitosamente',
-            post
+        const {limit,offset}=pagination(req.query);
+        const query={status:true};
+        if(req.query.category!==undefined){if(typeof req.query.category!=='string'||!mongoose.isValidObjectId(req.query.category))fail(400,'Categoría inválida');query.category=req.query.category;}
+        const [total,posts]=await Promise.all([Post.countDocuments(query),Post.find(query).populate('category','name description').select('-commentVersion').sort({createdAt:-1,_id:-1}).skip(offset).limit(limit)]);
+        return res.json({success:true,total,posts,limit,offset});
+    }catch(error){return errorResponse(res,error);}
+};
+export const updatePost=async(req,res)=>{
+    try{
+        const data=postFields(req.body);
+        if(!Object.keys(data).length)fail(400,'No hay campos editables');
+        if(data.category&&!await Category.exists({_id:data.category}))fail(404,'Categoría no encontrada');
+        const post=await Post.findOneAndUpdate({_id:req.params.idPost,status:true},{$set:data},{new:true,runValidators:true});
+        if(!post)fail(404,'Publicación no encontrada');
+        return res.json({success:true,message:'Publicación actualizada',post});
+    }catch(error){return errorResponse(res,error);}
+};
+export const deletePost=async(req,res)=>{
+    try{
+        let post;
+        await mongoose.connection.transaction(async session=>{
+            post=await Post.findOneAndUpdate({_id:req.params.idPost,status:true},{$set:{status:false,comments:[]},$inc:{commentVersion:1}},{new:true,session});
+            if(!post)fail(404,'Publicación no encontrada');
+            await Comments.deleteMany({post:post._id},{session});
         });
-
-    }catch(err){
-        res.status(500).json({
-            success: false,
-            message: 'Error al eliminar la publicación',
-            error: err.message
-        });
-    }
-}
-
-
+        return res.json({success:true,message:'Publicación desactivada y comentarios retirados',post});
+    }catch(error){return errorResponse(res,error);}
+};
